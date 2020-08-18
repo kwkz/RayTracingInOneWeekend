@@ -21,6 +21,7 @@ int main() {
   // render
 
   for (int j = image_height - 1; j >= 0; --j) {
+    std::cerr << "\nScanlines remaining: " << j << ' ' << std::flush;
     for (int i = 0; i < image_width; ++i) {
       auto  r = static_cast<double>(i) / (image_width - 1);
       auto  g = static_cast<double>(j) / (image_height - 1);
@@ -34,4 +35,6 @@ int main() {
     }
   }
   stbi_write_png(filename, static_cast<int>(image_width), static_cast<int>(image_height), static_cast<int>(sizeof(pixel)), data.get(), 0); 
+  
+  std::cerr << "\nDone\n";
 }
