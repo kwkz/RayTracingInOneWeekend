@@ -9,7 +9,7 @@ public:
   ray() = default;
   ray(const point3& origin, const vec3& direction)
     : origin_(origin)
-    , direction_(direction_) {}
+    , direction_(direction) {}
 
   point3 origin() const { return origin_; }
   vec3 direction() const { return direction_; }
